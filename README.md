@@ -1,4 +1,4 @@
-## Sales Insights Data Analysis Project
+# Sales Insights Data Analysis Project
 
 ### Instructions to setup mysql on your local computer
 
