@@ -2,10 +2,10 @@
 
 ### Instructions to setup mysql on your local computer
 
-1. Follow step in this video to install mysql on your local computer
+1. Follow the steps in this video to install MySQL on your local computer
 https://www.youtube.com/watch?v=WuBcTJnIuzo
 
-1. SQL database dump is in db_dump.sql file above. Download `db_dump.sql` file to your local computer and import it as per instructions given in the tutorial video
+1. SQL database dump is in the db_dump.sql file above. Download the `db_dump.sql` file to your local computer and import it as per the instructions given in the tutorial video
 
 ### Data Analysis Using SQL
 
@@ -13,19 +13,19 @@ https://www.youtube.com/watch?v=WuBcTJnIuzo
 
     `SELECT * FROM customers;`
 
-1. Show total number of customers
+1. Show the total number of customers
 
     `SELECT count(*) FROM customers;`
 
-1. Show transactions for Chennai market (market code for chennai is Mark001
+1. Show transactions for the Chennai market (the market code for Chennai is Mark001
 
     `SELECT * FROM transactions where market_code='Mark001';`
 
-1. Show distrinct product codes that were sold in chennai
+1. Show distinct product codes that were sold in Chennai
 
     `SELECT distinct product_code FROM transactions where market_code='Mark001';`
 
-1. Show transactions where currency is US dollars
+1. Show transactions where the currency is US dollars
 
     `SELECT * from transactions where currency="USD"`
 
@@ -33,15 +33,15 @@ https://www.youtube.com/watch?v=WuBcTJnIuzo
 
     `SELECT transactions.*, date.* FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020;`
 
-1. Show total revenue in year 2020,
+1. Show total revenue in the year 2020,
 
     `SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020 and transactions.currency="INR\r" or transactions.currency="USD\r";`
 	
-1. Show total revenue in year 2020, January Month,
+1. Show total revenue in the year 2020, January Month,
 
     `SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020 and and date.month_name="January" and (transactions.currency="INR\r" or transactions.currency="USD\r");`
 
-1. Show total revenue in year 2020 in Chennai
+1. Show total revenue in the year 2020 in Chennai
 
     `SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020
 and transactions.market_code="Mark001";`
